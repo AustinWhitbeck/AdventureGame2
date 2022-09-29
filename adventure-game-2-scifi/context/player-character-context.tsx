@@ -30,6 +30,7 @@ interface PlayerCharacterContext {
     physAttack: () => void;
     magAttack: () => void;
     energyAttack: () => void;
+    updateCharacter: () => void;
 }
 
 
@@ -59,6 +60,10 @@ export const PlayerCharacterContextProvider = ({children}: {children: ReactNode}
             },
     })
 
+    const updateCharacter = () => {
+        console.log('update character')
+    }
+
     const physAttack = () => {
         console.log('this is a physical attack');
     }
@@ -77,6 +82,7 @@ export const PlayerCharacterContextProvider = ({children}: {children: ReactNode}
             physAttack,
             magAttack,
             energyAttack,
+            updateCharacter,
         }}>
             {children}
         </playerCharacterContext.Provider>
